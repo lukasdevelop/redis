@@ -1,1 +1,1 @@
-{"version":3,"file":"queue.js","sourceRoot":"","sources":["../src/queue.ts"],"names":[],"mappings":";;;;;AAAA,yBAAsB;AACtB,yDAAkC;AAElC,eAAK,CAAC,OAAO,EAAE,CAAA"}
+{"version":3,"file":"queue.js","sourceRoot":"","sources":["../src/queue.ts"],"names":[],"mappings":";;;;;AAAA,yBAAsB;AACtB,yDAAkC;AAClC,+BAAqD;AAErD,eAAK,CAAC,SAAS,CAAC,OAAO,CAAC,uBAAgB,CAAC,MAAM,CAAC,CAAA;AAChD,eAAK,CAAC,eAAe,CAAC,OAAO,CAAC,iBAAU,CAAC,MAAM,CAAC,CAAA;AAEhD,OAAO,CAAC,GAAG,CAAC,sBAAsB,CAAC,CAAA"}

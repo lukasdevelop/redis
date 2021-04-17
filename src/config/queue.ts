@@ -1,10 +1,20 @@
 import Queue from 'bull'
 import redisConfig from '../config/redis'
+import RegistrationMail from '../jobs/RegistrationMail'
+import UserReport from '../jobs/UserReport'
 
-import * as jobs from '../jobs'
+const mailQueue = new Queue(RegistrationMail.key, String(redisConfig))
+const UserReportQueue = new Queue(UserReport.key, String(redisConfig))
+
+export default {
+    mailQueue,
+    UserReportQueue
+}
+/*import * as jobs from '../jobs'
+
 
 const queues = Object.values(jobs).map(job => ({
-    bull: Queue(job.key, redisConfig),
+    bull: new Queue(job.key, String(redisConfig)),
     name: job.key,
     handle: job.handle,
 }))
@@ -21,13 +31,13 @@ export default {
 
             queue.bull.process(queue.handle)
 
-            queue.bull.on('failed', (job, err) =>{
+            /*queue.bull.on('failed', (job, err) =>{
                 console.log('Job Failed', queue.name, job.data)
                 console.log(err)
             })
         });
     }
-}
+}*/
 /*import RegistrationMail from '../jobs/RegistrationMail'
 const mailQueue = new Queue(RegistrationMail.key, redisConfig)
 

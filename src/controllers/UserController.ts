@@ -9,11 +9,8 @@ const store = async (req: any, res: any) => {
         password
     }
 
-    //Enviar email
-
-    await Queue.add('RegistrationMail', { user })
-
-    await Queue.add('UserReport', { user })
+    Queue.mailQueue.add( { user })//Enviar email
+    Queue.UserReportQueue.add( { user })
 
     return res.json(user)
 }
